@@ -10,6 +10,7 @@
     Height="700"
     FontFamily="Times New Roman"
     FontSize="14"
+    Icon="/Icon.ico"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Background="{StaticResource PrimaryBackground}">
