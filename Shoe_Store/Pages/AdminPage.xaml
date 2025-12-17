@@ -1,114 +1,165 @@
-﻿<Page x:Class="testDemoYP.pagesFr.AdminPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:testDemoYP.pagesFr"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Панель администратора"
-      FontSize="14"
-      Background="{StaticResource PrimaryBackground}">
+﻿<Page
+    x:Class="Shoe_Store.Pages.AdminPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Shoe_Store.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Панель администратора"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="{StaticResource PrimaryBackground}"
+    FontSize="14"
+    mc:Ignorable="d">
 
     <Grid Background="{StaticResource PrimaryBackground}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Background="{StaticResource AccentBrush}" CornerRadius="5" Padding="10" HorizontalAlignment="Right" VerticalAlignment="Top" >
+        <Border
+            Grid.Row="0"
+            Padding="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Background="{StaticResource AccentBrush}"
+            CornerRadius="5">
             <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Vertical" Margin="0,0,15,0">
-                    <TextBlock x:Name="UserNameText" Text="" FontWeight="Bold" FontSize="12"/>
-                    <TextBlock x:Name="UserRoleText" Text="" FontSize="11"/>
+                <StackPanel Margin="0,0,15,0" Orientation="Vertical">
+                    <TextBlock
+                        x:Name="UserNameText"
+                        FontSize="12"
+                        FontWeight="Bold"
+                        Text="" />
+                    <TextBlock
+                        x:Name="UserRoleText"
+                        FontSize="11"
+                        Text="" />
                 </StackPanel>
-                <Button x:Name="LogoutBtn" Content="Выход" Click="LogoutBtn_Click" 
-                        Width="80" Height="30" Background="{StaticResource SecondaryBackground}"/>
+                <Button
+                    x:Name="LogoutBtn"
+                    Width="80"
+                    Height="30"
+                    Background="{StaticResource SecondaryBackground}"
+                    Click="LogoutBtn_Click"
+                    Content="Выход" />
             </StackPanel>
         </Border>
 
-        <TabControl Grid.Row="1" Background="{StaticResource PrimaryBackground}" Margin="0,10,0,0">
-            <TabItem Header="Товары" Background="{StaticResource SecondaryBackground}">
+        <TabControl
+            Grid.Row="1"
+            Margin="0,10,0,0"
+            Background="{StaticResource PrimaryBackground}">
+            <TabItem Background="{StaticResource SecondaryBackground}" Header="Товары">
                 <Grid Background="{StaticResource PrimaryBackground}">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
-                        <Button Content="Добавить товар" Click="AddProduct_Click" Margin="0,0,10,0" Background="{StaticResource AccentBrush}"/>
-                        <Button Content="Удалить товар" Click="DeleteProduct_Click" Margin="0,0,10,0" Background="{StaticResource AccentBrush}"/>
+                    <StackPanel
+                        Grid.Row="0"
+                        Margin="10"
+                        Orientation="Horizontal">
+                        <Button
+                            Margin="0,0,10,0"
+                            Background="{StaticResource AccentBrush}"
+                            Click="AddProduct_Click"
+                            Content="Добавить товар" />
+                        <Button
+                            Margin="0,0,10,0"
+                            Background="{StaticResource AccentBrush}"
+                            Click="DeleteProduct_Click"
+                            Content="Удалить товар" />
                     </StackPanel>
 
-                    <Frame x:Name="ProductsFrame" Grid.Row="1" Background="{StaticResource PrimaryBackground}"/>
+                    <Frame
+                        x:Name="ProductsFrame"
+                        Grid.Row="1"
+                        Background="{StaticResource PrimaryBackground}" />
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Заказы" Background="{StaticResource SecondaryBackground}">
+            <TabItem Background="{StaticResource SecondaryBackground}" Header="Заказы">
                 <Grid Background="{StaticResource PrimaryBackground}">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
-                        <Button Content="Добавить заказ" Click="AddOrder_Click" Margin="0,0,10,0" Background="{StaticResource AccentBrush}"/>
-                        <Button Content="Удалить заказ" Click="DeleteOrder_Click" Margin="0,0,10,0" Background="{StaticResource AccentBrush}"/>
+                    <StackPanel
+                        Grid.Row="0"
+                        Margin="10"
+                        Orientation="Horizontal">
+                        <Button
+                            Margin="0,0,10,0"
+                            Background="{StaticResource AccentBrush}"
+                            Click="AddOrder_Click"
+                            Content="Добавить заказ" />
+                        <Button
+                            Margin="0,0,10,0"
+                            Background="{StaticResource AccentBrush}"
+                            Click="DeleteOrder_Click"
+                            Content="Удалить заказ" />
                     </StackPanel>
 
-                    <ListView x:Name="OrdersListView" Grid.Row="1" 
-                              Background="{StaticResource PrimaryBackground}"
-                              SelectionMode="Single"
-                              MouseDoubleClick="OrdersListView_MouseDoubleClick"
-                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView
+                        x:Name="OrdersListView"
+                        Grid.Row="1"
+                        Background="{StaticResource PrimaryBackground}"
+                        MouseDoubleClick="OrdersListView_MouseDoubleClick"
+                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                        SelectionMode="Single">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <Border BorderBrush="{StaticResource AccentBrush}" 
-                                        BorderThickness="0,0,0,1" 
-                                        Padding="10"
-                                        Margin="5">
+                                <Border
+                                    Margin="5"
+                                    Padding="10"
+                                    BorderBrush="{StaticResource AccentBrush}"
+                                    BorderThickness="0,0,0,1">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
 
-                                        <StackPanel  Grid.Column="0">
-                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                                                <TextBlock Text="Артикул: " FontWeight="SemiBold"/>
-                                                <TextBlock Text="{Binding Sostav.Articul}"/>
+                                        <StackPanel Grid.Column="0">
+                                            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                                                <TextBlock FontWeight="SemiBold" Text="Артикул: " />
+                                                <TextBlock Text="{Binding Sostav.Articul}" />
                                             </StackPanel>
 
 
-                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                                                <TextBlock Text="Статус: " 
-                                                           FontWeight="SemiBold"/>
-                                                <TextBlock Text="{Binding Status1.StatusName}"/>
+                                            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                                                <TextBlock FontWeight="SemiBold" Text="Статус: " />
+                                                <TextBlock Text="{Binding Status1.StatusName}" />
                                             </StackPanel>
 
-                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                                                <TextBlock Text="Адрес: " 
-                                                           FontWeight="SemiBold"/>
-                                                <TextBlock Text="{Binding Address.City}"/>
+                                            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                                                <TextBlock FontWeight="SemiBold" Text="Адрес: " />
+                                                <TextBlock Text="{Binding Address.City}" />
                                             </StackPanel>
 
-                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                                                <TextBlock Text="Дата заказа: " 
-                                                           FontWeight="SemiBold"/>
-                                                <TextBlock Text="{Binding DateOrder, StringFormat={}dd.MM.yyyy}"/>
+                                            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                                                <TextBlock FontWeight="SemiBold" Text="Дата заказа: " />
+                                                <TextBlock Text="{Binding DateOrder, StringFormat={}dd.MM.yyyy}" />
                                             </StackPanel>
                                         </StackPanel>
 
-                                        <StackPanel Grid.Column="1" 
-                                                    HorizontalAlignment="Right"
-                                                    VerticalAlignment="Center">
-                                            <TextBlock Text="Дата доставки"
-                                                       FontWeight="SemiBold"
-                                                       HorizontalAlignment="Right"/>
-                                            <TextBlock Text="{Binding DateDel, StringFormat={}dd.MM.yyyy}"
-                                                       FontSize="16"
-                                                       FontWeight="Bold"
-                                                       HorizontalAlignment="Right"/>
+                                        <StackPanel
+                                            Grid.Column="1"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Center">
+                                            <TextBlock
+                                                HorizontalAlignment="Right"
+                                                FontWeight="SemiBold"
+                                                Text="Дата доставки" />
+                                            <TextBlock
+                                                HorizontalAlignment="Right"
+                                                FontSize="16"
+                                                FontWeight="Bold"
+                                                Text="{Binding DateDel, StringFormat={}dd.MM.yyyy}" />
                                         </StackPanel>
                                     </Grid>
                                 </Border>
@@ -117,12 +168,12 @@
 
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
-                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Cursor" Value="Hand" />
                                 <Style.Triggers>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
+                                        <Setter Property="Background" Value="{StaticResource AccentBrush}" />
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>

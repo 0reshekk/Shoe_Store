@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 
-namespace testDemoYP.pagesFr
+namespace Shoe_Store.Pages
 {
     /// Логика взаимодействия для ProductsPage.xaml
     public partial class ProductsPage : Page

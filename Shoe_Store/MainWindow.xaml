@@ -18,6 +18,6 @@
             x:Name="MainFrame"
             Background="{StaticResource PrimaryBackground}"
             NavigationUIVisibility="Hidden"
-            Source="pagesFr/AuthPage.xaml" />
+            Source="Pages/AuthPage.xaml" />
     </Grid>
 </Window>
