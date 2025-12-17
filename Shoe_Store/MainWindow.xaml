@@ -1,0 +1,22 @@
+﻿<Window
+    x:Class="Shoe_Store.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Shoe_Store"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Магазин обуви - ООО 'Обувь"
+    Width="1200"
+    Height="700"
+    FontFamily="Times New Roman"
+    FontSize="14"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Background="{StaticResource PrimaryBackground}">
+        <Frame
+            x:Name="MainFrame"
+            Background="{StaticResource PrimaryBackground}"
+            NavigationUIVisibility="Hidden"
+            Source="pagesFr/AuthPage.xaml" />
+    </Grid>
+</Window>
