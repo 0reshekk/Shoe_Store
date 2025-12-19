@@ -12,12 +12,18 @@ namespace Shoe_Store
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class FIO
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public FIO()
+        {
+            this.Orders = new HashSet<Orders>();
+            this.Users = new HashSet<Users>();
+        }
+    
+        public string FIO1 { get; set; }
+        public int ID { get; set; }
+    
+        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Users> Users { get; set; }
     }
 }

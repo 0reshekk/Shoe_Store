@@ -12,12 +12,20 @@ namespace Shoe_Store
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Sostav
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public Sostav()
+        {
+            this.Orders = new HashSet<Orders>();
+        }
+    
+        public string Sostav_order { get; set; }
+        public Nullable<int> ID_number_order { get; set; }
+        public Nullable<int> Count { get; set; }
+        public Nullable<int> ID_articul_product { get; set; }
+        public int ID { get; set; }
+    
+        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

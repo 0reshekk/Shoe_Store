@@ -12,12 +12,16 @@ namespace Shoe_Store
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Gender
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public Gender()
+        {
+            this.Product = new HashSet<Product>();
+        }
+    
+        public string Gender_product { get; set; }
+        public int ID { get; set; }
+    
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

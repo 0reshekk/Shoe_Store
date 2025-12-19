@@ -12,12 +12,21 @@ namespace Shoe_Store
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Orders
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Numer_order { get; set; }
+        public int ID_sostav { get; set; }
+        public System.DateTime Date_order { get; set; }
+        public System.DateTime Date_delivery { get; set; }
+        public int Adress_PVZ { get; set; }
+        public int Glient_FIO { get; set; }
+        public int Code { get; set; }
+        public int Status_order { get; set; }
+        public int ID_order { get; set; }
+    
+        public virtual FIO FIO { get; set; }
+        public virtual PVZ PVZ { get; set; }
+        public virtual Sostav Sostav { get; set; }
+        public virtual Status Status { get; set; }
     }
 }

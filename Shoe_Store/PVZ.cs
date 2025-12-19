@@ -12,12 +12,21 @@ namespace Shoe_Store
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class PVZ
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public PVZ()
+        {
+            this.Orders = new HashSet<Orders>();
+        }
+    
+        public int ID { get; set; }
+        public int Index_PVZ { get; set; }
+        public string State { get; set; }
+        public int Street { get; set; }
+        public int Home { get; set; }
+    
+        public virtual Home_Number Home_Number { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual Street Street1 { get; set; }
     }
 }
